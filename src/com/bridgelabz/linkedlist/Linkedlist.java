@@ -26,18 +26,14 @@ public class Linkedlist {
             head = newNode;
         }
     }
-    public void deletelastnode(){
-        if(head == null || head.next == null){
-            head = null;
+    public void findposition(int key) {
+        Node current = head;
+        int position = 0;
+        while(current != null && current.data != key){
+            current = current.next;
+            position+=1;
         }
-        else {
-            Node current = head;
-            while (current.next.next != null) {
-                current = current.next;
-            }
-            current.next = null;
-        }
-        }
+        System.out.println("The Position of "+key+" is at "+position);
     }
     public void display(){
         Node temp = head;
