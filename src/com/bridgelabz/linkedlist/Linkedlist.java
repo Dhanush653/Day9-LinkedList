@@ -26,6 +26,19 @@ public class Linkedlist {
             head = newNode;
         }
     }
+    public void append(int val){
+        Node newNode1 = new Node(val);
+        if(head == null){
+            head = newNode1;
+        }
+        else{
+            Node current = head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = newNode1;
+        }
+    }
     public void display(){
         Node temp = head;
         while(temp != null){
