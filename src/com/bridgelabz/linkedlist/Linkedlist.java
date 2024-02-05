@@ -26,9 +26,20 @@ public class Linkedlist {
             head = newNode;
         }
     }
+    public void deletelastnode(){
+        if(head == null || head.next == null){
+            head = null;
+        }
+        else {
+            Node current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
+        }
+        }
+    }
     public void display(){
-        // change the head to next node to remove the first element
-        head = head.next;
         Node temp = head;
         while(temp != null){
             System.out.print(temp.data+"->");
