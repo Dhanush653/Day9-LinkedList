@@ -11,7 +11,6 @@ class Node {
 }
 public class MyLinkedlist {
     Node head;
-
     public MyLinkedlist() {
         head = null;
     }
@@ -56,6 +55,19 @@ public class MyLinkedlist {
                 newNode.next = current.next;
                 current.next = newNode;
             }
+        }
+    }
+    // Delete The Last Node
+    public void deletelastnode(){
+        if(head == null || head.next == null){
+            head = null;
+        }
+        else {
+            Node current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
         }
     }
     //Position In Which The Node Occur
