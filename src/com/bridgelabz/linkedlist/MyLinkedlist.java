@@ -97,15 +97,33 @@ public class MyLinkedlist {
         }
     }
 
-    // display the length of the array
+    // display the length of the Linked list
     public void size(){
         Node current = head;
-        int count = 1;
+        int count = 0;
         while(current.next != null){
             count += 1;
             current = current.next;
         }
         System.out.println("Size of Linkedlist is: "+count);
+    }
+    // Add data in Ascending order
+    public void add(int val){
+        Node newNode1 = new Node(val);
+        if(head == null || val < head.data){
+            newNode1.next  = head;
+            head = newNode1;
+            return;
+        }
+        Node current = head;
+        Node prev = null;
+
+        while(current != null && val >= current.data){
+            prev = current;
+            current = current.next;
+        }
+        prev.next = newNode1;
+        newNode1.next = current;
     }
     public void display() {
         //head = head.next; To delete the first node
@@ -116,5 +134,4 @@ public class MyLinkedlist {
         }
         System.out.println("null");
     }
-
 }
