@@ -6,8 +6,10 @@ public class Main {
         list.append(56);
         list.append(30);
         list.append(70);
-        list.display();
         list.insertAfter(40,30);
         list.display();
+        list.deleteParticularElement(40);
+        list.display();
+        list.size();
     }
 }

@@ -81,6 +81,32 @@ public class MyLinkedlist {
         System.out.println(count);
 
     }
+    //Delete the Given Node From The Linkedlist
+    public void deleteParticularElement(int val){
+        Node current = head;
+        Node previous = null;
+        if(head.data == val && head != null){
+            head = current.next;
+        }
+        else{
+            while(current != null && current.data != val){
+                previous = current;
+                current = current.next;
+            }
+            previous.next = current.next;
+        }
+    }
+
+    // display the length of the array
+    public void size(){
+        Node current = head;
+        int count = 1;
+        while(current.next != null){
+            count += 1;
+            current = current.next;
+        }
+        System.out.println("Size of Linkedlist is: "+count);
+    }
     public void display() {
         //head = head.next; To delete the first node
         Node temp = head;
